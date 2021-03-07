@@ -1,39 +1,41 @@
-# Miscellaneous
-*.class
-*.log
-*.pyc
-*.swp
 .DS_Store
-.atom/
-.buildlog/
-.history
+.dart_tool/
+
+.packages
+.pub/
+
+.idea/
+.vagrant/
+.sconsign.dblite
 .svn/
 
-# IntelliJ related
-*.iml
-*.ipr
-*.iws
-.idea/
+*.swp
+profile
 
-# The .vscode folder contains launch configuration and tasks you configure in
-# VS Code which you may wish to be included in version control, so this line
-# is commented out by default.
-#.vscode/
+DerivedData/
 
-# Flutter/Dart/Pub related
-**/doc/api/
-.dart_tool/
-.flutter-plugins
-.packages
-.pub-cache/
-.pub/
+.generated/
+
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+
+!default.pbxuser
+!default.mode1v3
+!default.mode2v3
+!default.perspectivev3
+
+xcuserdata
+
+*.moved-aside
+
+*.pyc
+*sync/
+Icon?
+.tags*
+
 build/
 .android/
 .ios/
-
-#自定义忽略文件（注解生成文件、包管理文件）
-**/*.r.dart
-**/*.m.dart
-**/*.g.dart
-**/pubspec.lock
-**/.flutter-plugins-dependencies
+.flutter-plugins
