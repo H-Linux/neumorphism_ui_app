@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:neumorphism_ui_app/widget_connme/box_scaffold.dart';
 
 import 'utils/tools.dart';
 
@@ -13,6 +12,16 @@ class MyApp extends StatelessWidget {
       routes: <String, WidgetBuilder>{
         '/': (BuildContext context) => RouterPage(),
       },
+      localizationsDelegates: const [
+        S.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate
+      ],
+      supportedLocales: [
+        const Locale('zh', ''),
+        ...S.delegate.supportedLocales
+      ],
     );
   }
 }
