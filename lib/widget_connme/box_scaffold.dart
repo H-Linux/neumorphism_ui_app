@@ -100,7 +100,7 @@ class _BoxScaffoldState extends State<BoxScaffold> {
                               boxShadow: [
                                 BoxShadow(
                                   color: SetColor.shadowLight,
-                                  spreadRadius: 2,
+                                  spreadRadius: 1,
                                   offset: Offset(1, 1),
                                 ),
                                 BoxShadow(
@@ -129,8 +129,6 @@ class _BoxScaffoldState extends State<BoxScaffold> {
                                         ),
                                   decoration: BoxDecoration(
                                     color: SetColor.myBackgroundColor,
-                                    border:
-                                        Border.all(color: Color(0xffd1d9e6)),
                                     borderRadius: BorderRadius.circular(10),
                                     boxShadow: [
                                       BoxShadow(
@@ -159,13 +157,13 @@ class _BoxScaffoldState extends State<BoxScaffold> {
           boxShadow: [
             BoxShadow(
               color: SetColor.shadowLight,
-              spreadRadius: 2,
+              spreadRadius: 1,
               offset: Offset(1, 1),
             ),
             BoxShadow(
               color: SetColor.shadowDarkLight,
               spreadRadius: 1,
-              offset: Offset(-2, -2),
+              offset: Offset(-1, -1),
             ),
           ],
         ),
