@@ -11,6 +11,7 @@ class BoxScaffold extends StatefulWidget {
   final GestureTapCallback onTapLeading;
   final GestureTapCallback onActions;
   final Widget child;
+  final bool boxBorDer;
 
   const BoxScaffold({
     Key key,
@@ -23,6 +24,7 @@ class BoxScaffold extends StatefulWidget {
     this.onTapLeading,
     this.onActions,
     this.child,
+    this.boxBorDer = true,
   }) : super(key: key);
 
   @override
@@ -38,8 +40,7 @@ class _BoxScaffoldState extends State<BoxScaffold> {
       behavior: HitTestBehavior.translucent,
       onTap: () => FocusScope.of(context).requestFocus(FocusNode()),
       child: Container(
-        margin:
-            EdgeInsets.only(top: _top + 16, left: 16, right: 16, bottom: 16),
+        margin: EdgeInsets.only(top: _top + 10, left: 8, right: 8, bottom: 10),
         child: Column(
           children: [
             widget.appBar == false
@@ -151,22 +152,24 @@ class _BoxScaffoldState extends State<BoxScaffold> {
             widget.child == null ? Container() : widget.child,
           ],
         ),
-        decoration: BoxDecoration(
-          color: SetColor.myBackgroundColor,
-          borderRadius: BorderRadius.circular(10),
-          boxShadow: [
-            BoxShadow(
-              color: SetColor.shadowLight,
-              spreadRadius: 1,
-              offset: Offset(1, 1),
-            ),
-            BoxShadow(
-              color: SetColor.shadowDarkLight,
-              spreadRadius: 1,
-              offset: Offset(-1, -1),
-            ),
-          ],
-        ),
+        decoration: widget.boxBorDer
+            ? BoxDecoration(
+                color: SetColor.myBackgroundColor,
+                borderRadius: BorderRadius.circular(10),
+                boxShadow: [
+                  BoxShadow(
+                    color: SetColor.shadowLight,
+                    spreadRadius: 1,
+                    offset: Offset(1, 1),
+                  ),
+                  BoxShadow(
+                    color: SetColor.shadowDarkLight,
+                    spreadRadius: 1,
+                    offset: Offset(-1, -1),
+                  ),
+                ],
+              )
+            : BoxDecoration(),
       ),
     );
   }

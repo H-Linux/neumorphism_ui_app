@@ -15,6 +15,7 @@ class _RouterPageState extends State<RouterPage> {
       backgroundColor: SetColor.myBackgroundColor,
       body: BoxScaffold(
         iconLeft: false,
+        child: BoxContainer(),
       ),
     );
   }
