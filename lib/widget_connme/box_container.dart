@@ -15,7 +15,8 @@ class BoxContainer extends StatefulWidget {
     this.padding = EdgeInsets.zero,
     this.margin = EdgeInsets.zero,
     this.child,
-    this.sunken = true, this.radius = 10,
+    this.sunken = true,
+    this.radius = 10,
   }) : super(key: key);
 
   @override
