@@ -20,7 +20,7 @@ class BoxScaffold extends StatefulWidget {
     this.leadingIcon,
     this.actions,
     this.iconLeft = true,
-    this.iconRight = true,
+    this.iconRight = false,
     this.onTapLeading,
     this.onActions,
     this.child,
@@ -51,9 +51,15 @@ class _BoxScaffoldState extends State<BoxScaffold> {
                     child: Row(
                       children: [
                         widget.iconLeft == false
-                            ? SizedBox()
+                            ? Container(
+                                height: 35,
+                                width: 50,
+                                margin: EdgeInsets.only(right: 10),
+                              )
                             : GestureDetector(
-                                onTap: () => widget.onTapLeading,
+                                onTap: () => widget.onTapLeading != null
+                                    ? widget.onTapLeading
+                                    : maybePop(),
                                 child: Container(
                                   height: 35,
                                   width: 50,
@@ -73,13 +79,13 @@ class _BoxScaffoldState extends State<BoxScaffold> {
                                     boxShadow: [
                                       BoxShadow(
                                         color: SetColor.shadowDarkLight,
-                                        blurRadius: 2,
-                                        offset: Offset(2, 1),
+                                        spreadRadius: 1,
+                                        offset: Offset(1, 1),
                                       ),
                                       BoxShadow(
                                         color: SetColor.shadowLight,
-                                        blurRadius: 2,
-                                        offset: Offset(-2, -2),
+                                        spreadRadius: 1,
+                                        offset: Offset(-1, -1),
                                       ),
                                     ],
                                   ),
@@ -114,7 +120,11 @@ class _BoxScaffoldState extends State<BoxScaffold> {
                           ),
                         ),
                         widget.iconRight == false
-                            ? SizedBox()
+                            ? Container(
+                                height: 35,
+                                width: 50,
+                                margin: EdgeInsets.only(right: 10),
+                              )
                             : GestureDetector(
                                 onTap: () => widget.onActions,
                                 child: Container(
@@ -134,13 +144,13 @@ class _BoxScaffoldState extends State<BoxScaffold> {
                                     boxShadow: [
                                       BoxShadow(
                                         color: SetColor.shadowDarkLight,
-                                        blurRadius: 2,
-                                        offset: Offset(2, 1),
+                                        spreadRadius: 1,
+                                        offset: Offset(1, 1),
                                       ),
                                       BoxShadow(
                                         color: SetColor.shadowLight,
-                                        blurRadius: 2,
-                                        offset: Offset(-2, -2),
+                                        spreadRadius: 1,
+                                        offset: Offset(-1, -1),
                                       ),
                                     ],
                                   ),
@@ -160,7 +170,7 @@ class _BoxScaffoldState extends State<BoxScaffold> {
                   BoxShadow(
                     color: SetColor.shadowLight,
                     spreadRadius: 1,
-                    offset: Offset(1, 1),
+                    offset: Offset(2, 1),
                   ),
                   BoxShadow(
                     color: SetColor.shadowDarkLight,

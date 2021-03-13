@@ -14,8 +14,10 @@ class _RouterPageState extends State<RouterPage> {
     return Scaffold(
       backgroundColor: SetColor.myBackgroundColor,
       body: BoxScaffold(
-        iconLeft: false,
-        child: BoxContainer(),
+        iconRight: true,
+        leadingIcon: Icon(Icons.dehaze),
+        onTapLeading: () {},
+        onActions: () {},
       ),
     );
   }
