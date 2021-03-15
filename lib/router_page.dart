@@ -18,6 +18,10 @@ class _RouterPageState extends State<RouterPage> {
         leadingIcon: Icon(Icons.dehaze),
         onTapLeading: () {},
         onActions: () {},
+        child: Container(
+          color: Colors.red,
+          child: Text('红色'),
+        ),
       ),
     );
   }

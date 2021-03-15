@@ -35,7 +35,15 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-
+  /// `title`
+  String get title {
+    return Intl.message(
+      'title',
+      name: 'title',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

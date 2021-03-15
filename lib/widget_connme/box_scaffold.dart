@@ -15,7 +15,7 @@ class BoxScaffold extends StatefulWidget {
 
   const BoxScaffold({
     Key key,
-    this.title,
+    this.title = 'title',
     this.appBar = true,
     this.leadingIcon,
     this.actions,
@@ -42,6 +42,7 @@ class _BoxScaffoldState extends State<BoxScaffold> {
       child: Container(
         margin: EdgeInsets.only(top: _top + 10, left: 8, right: 8, bottom: 10),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             widget.appBar == false
                 ? SizedBox()
@@ -93,9 +94,10 @@ class _BoxScaffoldState extends State<BoxScaffold> {
                               ),
                         Expanded(
                           child: Container(
+                            height: 35,
                             alignment: Alignment.center,
                             child: Text(
-                              '文本',
+                              widget.title,
                               style: TextStyle(
                                 color: SetColor.mainTypeFace,
                                 fontSize: SetSize.subTitle,
@@ -159,7 +161,12 @@ class _BoxScaffoldState extends State<BoxScaffold> {
                       ],
                     ),
                   ),
-            widget.child == null ? Container() : widget.child,
+            widget.child == null
+                ? Container()
+                : Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 8),
+                    child: widget.child,
+                  )
           ],
         ),
         decoration: widget.boxBorDer
