@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'utils/tools.dart';
+import 'view_page.dart';
 
 class RouterPage extends StatefulWidget {
   @override
@@ -8,6 +9,9 @@ class RouterPage extends StatefulWidget {
 }
 
 class _RouterPageState extends State<RouterPage> {
+  int _currentIndex = 0;
+  final ViewPageController _viewPageController = ViewPageController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,14 +22,17 @@ class _RouterPageState extends State<RouterPage> {
         leadingIcon: Icon(Icons.dehaze),
         onTapLeading: () {},
         onActions: () {},
-        child: Container(
-          child: Text('红色'),
+        child: ViewPage(
+          controller: _viewPageController,
+          onPageChanged: (int index) {
+            setState(() {
+              _currentIndex = index;
+            });
+          },
         ),
       ),
     );
   }
-
-  int _currentIndex = 0;
 
   Widget _bottomNavBar() {
     return Container(
@@ -34,21 +41,22 @@ class _RouterPageState extends State<RouterPage> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          _bottomNavItem(/*title: '首頁', */ icon: Icons.pages, index: 0),
-          _bottomNavItem(/*title: '首頁', */ icon: Icons.pages, index: 1),
-          _bottomNavItem(/*title: '首頁', */ icon: Icons.pages, index: 2),
+          _bottomNavItem(icon: Icons.pages, index: 0),
+          _bottomNavItem(icon: Icons.pages, index: 1),
+          _bottomNavItem(icon: Icons.pages, index: 2),
         ],
       ),
     );
   }
 
-  Widget _bottomNavItem({/*String title, */IconData icon, int index}) {
+  Widget _bottomNavItem({IconData icon, int index}) {
     bool _sunken = false;
     _sunken = index == _currentIndex ? true : false;
 
     return GestureDetector(
       onTap: () {
         setState(() {
+          _viewPageController.jumpTopage(index);
           _currentIndex = index;
         });
       },
@@ -60,10 +68,6 @@ class _RouterPageState extends State<RouterPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Icon(icon, size: 24),
-            /*Text(
-              title,
-              style: TextStyle(color: Colors.blue, fontSize: 12),
-            ),*/
           ],
         ),
       ),

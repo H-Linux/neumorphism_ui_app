@@ -21,7 +21,7 @@ class _SplashPageState extends State<SplashPage> {
           if (_countDown < 1) {
             //routePush(RouterPage(), RouterType.size);
             pushAndRemoveUntil(RouterPage(), RouterType.size);
-            _countTimer.cancel();
+            _countTimer?.cancel();
             _countTimer = null;
           } else {
             _countDown -= 1;
@@ -63,7 +63,7 @@ class _SplashPageState extends State<SplashPage> {
               onTap: () {
                 setState(() {
                   routePush(RouterPage(), RouterType.size);
-                  _countTimer.cancel();
+                  _countTimer?.cancel();
                   _countDown = 0;
                 });
               },
@@ -100,7 +100,7 @@ class _SplashPageState extends State<SplashPage> {
   @override
   void dispose() {
     super.dispose();
-    _countTimer.cancel();
+    _countTimer?.cancel();
     _countDown = 0;
   }
 }
