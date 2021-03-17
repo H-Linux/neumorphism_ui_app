@@ -11,6 +11,7 @@ class BoxScaffold extends StatefulWidget {
   final GestureTapCallback onTapLeading;
   final GestureTapCallback onActions;
   final Widget child;
+  final Widget bottomNavBar;
   final bool boxBorDer;
 
   const BoxScaffold({
@@ -24,6 +25,7 @@ class BoxScaffold extends StatefulWidget {
     this.onTapLeading,
     this.onActions,
     this.child,
+    this.bottomNavBar,
     this.boxBorDer = true,
   }) : super(key: key);
 
@@ -40,7 +42,8 @@ class _BoxScaffoldState extends State<BoxScaffold> {
       behavior: HitTestBehavior.translucent,
       onTap: () => FocusScope.of(context).requestFocus(FocusNode()),
       child: Container(
-        margin: EdgeInsets.only(top: _top + 10, left: 8, right: 8, bottom: 10),
+        margin:
+            EdgeInsets.only(top: _top + 16, left: 12, right: 12, bottom: 16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -159,12 +162,8 @@ class _BoxScaffoldState extends State<BoxScaffold> {
                       ],
                     ),
                   ),
-            widget.child == null
-                ? Container()
-                : Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 8),
-                    child: widget.child,
-                  )
+            widget.child == null ? Container() : Expanded(child: widget.child),
+            widget.bottomNavBar == null ? Container() : widget.bottomNavBar,
           ],
         ),
         decoration: widget.boxBorDer
