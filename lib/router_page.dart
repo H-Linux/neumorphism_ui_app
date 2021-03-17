@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'page/drawer/drawer_page.dart';
 import 'utils/tools.dart';
+import 'utils/transparent_router.dart';
 import 'view_page.dart';
 
 class RouterPage extends StatefulWidget {
@@ -20,7 +22,8 @@ class _RouterPageState extends State<RouterPage> {
         bottomNavBar: _bottomNavBar(),
         iconRight: true,
         leadingIcon: Icon(Icons.dehaze),
-        onTapLeading: () {},
+        onTapLeading: () => Navigator.of(context).push(
+            TransparentRouter(builder: (BuildContext context) => DrawerPage())),
         onActions: () {},
         child: ViewPage(
           controller: _viewPageController,

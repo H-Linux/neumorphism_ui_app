@@ -61,7 +61,7 @@ class _BoxScaffoldState extends State<BoxScaffold> {
                                 margin: EdgeInsets.only(right: 10),
                               )
                             : GestureDetector(
-                                onTap: () => widget.onTapLeading != null
+                                onTap: widget.onTapLeading != null
                                     ? widget.onTapLeading
                                     : maybePop(),
                                 child: Container(
@@ -129,7 +129,7 @@ class _BoxScaffoldState extends State<BoxScaffold> {
                                 margin: EdgeInsets.only(right: 10),
                               )
                             : GestureDetector(
-                                onTap: () => widget.onActions,
+                                onTap: widget.onActions,
                                 child: Container(
                                   height: 35,
                                   width: 50,
