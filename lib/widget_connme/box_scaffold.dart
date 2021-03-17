@@ -74,8 +74,6 @@ class _BoxScaffoldState extends State<BoxScaffold> {
                                         ),
                                   decoration: BoxDecoration(
                                     color: SetColor.myBackgroundColor,
-                                    border:
-                                        Border.all(color: Color(0xffd1d9e6)),
                                     borderRadius: BorderRadius.circular(10),
                                     boxShadow: [
                                       BoxShadow(

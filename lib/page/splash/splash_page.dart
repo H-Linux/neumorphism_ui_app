@@ -19,7 +19,8 @@ class _SplashPageState extends State<SplashPage> {
       (timer) {
         setState(() {
           if (_countDown < 1) {
-            routePush(RouterPage(), RouterType.size);
+            //routePush(RouterPage(), RouterType.size);
+            pushAndRemoveUntil(RouterPage(), RouterType.size);
             _countTimer.cancel();
             _countTimer = null;
           } else {
