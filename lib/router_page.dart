@@ -45,13 +45,12 @@ class _RouterPageState extends State<RouterPage> {
   Widget _bottomNavBar() {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 10),
-      //height: 50,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          _bottomNavItem(icon: Icons.pages, index: 0),
-          _bottomNavItem(icon: Icons.pages, index: 1),
-          _bottomNavItem(icon: Icons.pages, index: 2),
+          _bottomNavItem(icon: Icons.adjust, index: 0),
+          _bottomNavItem(icon: Icons.radio_button_off, index: 1),
+          _bottomNavItem(icon: Icons.amp_stories_rounded, index: 2),
         ],
       ),
     );

@@ -16,17 +16,7 @@ class _AllPageState extends State<AllPage> with AutomaticKeepAliveClientMixin {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: SetColor.myBackgroundColor,
-      body: Container(
-        child: Align(
-          child: Text(
-            'ALL${widget.title}',
-            style: TextStyle(
-              color: SetColor.mainTypeFace,
-              fontSize: 30,
-            ),
-          ),
-        ),
-      ),
+      body: Container(),
     );
   }
 
