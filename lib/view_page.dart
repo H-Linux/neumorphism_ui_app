@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'page/all/all_page.dart';
+import 'page/following/following_page.dart';
 
 class ViewPage extends StatefulWidget {
   final ValueChanged<int> onPageChanged;
@@ -35,9 +35,9 @@ class _ViewPageState extends State<ViewPage> {
             onPageChanged: widget.onPageChanged,
             controller: _pageController,
             children: <Widget>[
-              _wrapItem(AllPage(title: '1')),
-              _wrapItem(AllPage(title: '2')),
-              _wrapItem(AllPage(title: '3')),
+              _wrapItem(FollowingPage()),
+              _wrapItem(FollowingPage()),
+              _wrapItem(FollowingPage()),
             ],
           ),
         )
@@ -46,7 +46,10 @@ class _ViewPageState extends State<ViewPage> {
   }
 
   Widget _wrapItem(Widget widget) {
-    return Padding(padding: EdgeInsets.all(10.0), child: widget);
+    return Padding(
+      padding: EdgeInsets.only(top: 5, left: 10, right: 10),
+      child: widget,
+    );
   }
 }
 

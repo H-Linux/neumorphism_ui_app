@@ -89,6 +89,10 @@ class _DrawerPageState extends State<DrawerPage> {
                           icon: Icon(Icons.info),
                           tile: 'About Us',
                         ),
+                        TileList(
+                          icon: Icon(Icons.settings),
+                          tile: '设置',
+                        ),
                       ],
                     ),
                   ),
@@ -114,7 +118,9 @@ class _DrawerPageState extends State<DrawerPage> {
                     decoration: BoxDecoration(
                       border: Border(
                         top: BorderSide(
-                            width: 0.3, color: SetColor.grey.withOpacity(0.6)),
+                          width: 0.3,
+                          color: SetColor.grey.withOpacity(0.6),
+                        ),
                       ),
                     ),
                   ),

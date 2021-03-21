@@ -20,10 +20,10 @@ class _RouterPageState extends State<RouterPage> {
       backgroundColor: SetColor.myBackgroundColor,
       body: BoxScaffold(
         title: _currentIndex == 0
-            ? 'ALL1'
+            ? '正在关注'
             : _currentIndex == 1
-                ? 'ALL2'
-                : 'ALL3',
+                ? '发现'
+                : '浏览',
         bottomNavBar: _bottomNavBar(),
         iconRight: true,
         leadingIcon: Icon(Icons.dehaze),
