@@ -62,7 +62,7 @@ class _SplashPageState extends State<SplashPage> {
             child: GestureDetector(
               onTap: () {
                 setState(() {
-                  routePush(RouterPage(), RouterType.size);
+                  pushAndRemoveUntil(RouterPage(), RouterType.size);
                   _countTimer?.cancel();
                   _countDown = 0;
                 });

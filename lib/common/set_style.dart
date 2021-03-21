@@ -12,6 +12,8 @@ class SetColor {
 
   static const Color mainTypeFace = Color(0xff31344b);
   static const Color border = Color(0xffd1d9e6);
+
+  static const Color grey = Color(0xFF3A5160);
 }
 
 class SetSize {

@@ -11,7 +11,7 @@ class AllPage extends StatefulWidget {
   _AllPageState createState() => _AllPageState();
 }
 
-class _AllPageState extends State<AllPage> {
+class _AllPageState extends State<AllPage> with AutomaticKeepAliveClientMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,4 +29,7 @@ class _AllPageState extends State<AllPage> {
       ),
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }

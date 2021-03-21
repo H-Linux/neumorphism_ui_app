@@ -19,6 +19,11 @@ class _RouterPageState extends State<RouterPage> {
     return Scaffold(
       backgroundColor: SetColor.myBackgroundColor,
       body: BoxScaffold(
+        title: _currentIndex == 0
+            ? 'ALL1'
+            : _currentIndex == 1
+                ? 'ALL2'
+                : 'ALL3',
         bottomNavBar: _bottomNavBar(),
         iconRight: true,
         leadingIcon: Icon(Icons.dehaze),
